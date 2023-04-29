@@ -1,116 +1,27 @@
+<!--動作安定版-->
+
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/sample.css">
     <title>限定じゃんけん</title>
 </head>
 
 <body>
-    <header>
-        <h1>限定じゃんけん</h1>
-    </header>
+    <h1>限定じゃんけん</h1>
+    <p id="result"></p>
+    <p id="gameResult"></p>
+    <p id="playerStars"></p>
+    <p id="cpuStars"></p>
+    <p id="playerHand"></p>
+    <p id="cpuHand"></p>
+    <button onclick="playGame('グー')">グー</button>
+    <button onclick="playGame('パー')">パー</button>
+    <button onclick="playGame('チョキ')">チョキ</button>
 
-    <main>
-        <ul>
-            <li id="gu_btn">グー</li>
-            <li id="cho_btn">チョキ</li>
-            <li id="par_btn">パー</li>
-        </ul>
-        <div id="com_hand">コンピュータの出した手は？</div>
-        <div id="result">結果は？</div>
-
-
-        <div id="star">残りの星は？</div>
-        <div id="gu">残りのグーカードは？</div>
-        <div id="cho">残りのチョキカードは？</div>
-        <div id="par">残りのパーカードは？</div>
-
-
-    </main>
-
-    <footer>フッター</footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        //ここに処理を追加
-
-        //自分がグーを選択
-        $("#gu_btn").on("click", function () {
-
-            //NPCが出す手をランダムで決定
-            const min = 0;
-            const max = 2;
-            const randomNumber = Math.floor(Math.random() * (max - min + 1));
-            console.log(randomNumber);
-
-            //結果を比較
-            //0→グー,1→チョキ、2→パー
-            if (randomNumber === 0) {
-                $("#com_hand").text("コンピュータの出した手は？ 「グー！」");
-                $("#result").text("結果は？　「あいこです！」");
-            } else if (randomNumber === 1) {
-                $("#com_hand").text("コンピュータの出した手は？ 「チョキ！」");
-                $("#result").text("結果は？　「あなたの勝ちです！」");
-            } else {
-                $("#com_hand").text("コンピュータの出した手は？ 「パー！」");
-                $("#result").text("結果は？　「あなたの負けです！」");
-            }
-
-        });
-
-        //自分がチョキを選択
-        $("#cho_btn").on("click", function () {
-
-            //NPCが出す手をランダムで決定
-            const min = 0;
-            const max = 2;
-            const randomNumber = Math.floor(Math.random() * (max - min + 1));
-            console.log(randomNumber);
-
-            //結果を比較
-            //0→グー,1→チョキ、2→パー
-            if (randomNumber === 0) {
-                $("#com_hand").text("コンピュータの出した手は？ 「グー！」");
-                $("#result").text("結果は？　「あなたの負けです！」");
-            } else if (randomNumber === 1) {
-                $("#com_hand").text("コンピュータの出した手は？ 「チョキ！」");
-                $("#result").text("結果は？　「あいこです！」");
-            } else {
-                $("#com_hand").text("コンピュータの出した手は？ 「パー！」");
-                $("#result").text("結果は？　「あなたの勝ちです！」");
-            }
-
-        });
-
-        //自分がパーを選択
-        $("#par_btn").on("click", function () {
-
-            //NPCが出す手をランダムで決定
-            const min = 0;
-            const max = 2;
-            const randomNumber = Math.floor(Math.random() * (max - min + 1));
-            console.log(randomNumber);
-
-            //結果を比較
-            //0→グー,1→チョキ、2→パー
-            if (randomNumber === 0) {
-                $("#com_hand").text("コンピュータの出した手は？ 「グー！」");
-                $("#result").text("結果は？　「あなたの勝ちです！」");
-            } else if (randomNumber === 1) {
-                $("#com_hand").text("コンピュータの出した手は？ 「チョキ！」");
-                $("#result").text("結果は？　「あなたの負けです！」");
-            } else {
-                $("#com_hand").text("コンピュータの出した手は？ 「パー！」");
-                $("#result").text("結果は？　「あいこです！」");
-            }
-
-        });
-
-    </script>
-
+    <script src="game.js"></script>
 </body>
 
 </html>
