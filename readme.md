@@ -2,7 +2,10 @@
 
 ## DEMO
 
-  - デプロイしている場合はURLを記入（任意）
+  - 限定じゃんけん
+    - https://syuzo674.github.io/Janken/gentei_janken.html
+  - 引き分けモード
+    - https://syuzo674.github.io/Janken/hikiwake.html
 
 ## 紹介と使い方
 
